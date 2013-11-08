@@ -1,2 +1,2 @@
-openmediavault-virtual
-======================
+openmediavault-virtualhosts
+===========================
