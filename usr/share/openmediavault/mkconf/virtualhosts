@@ -1,0 +1,135 @@
+#!/bin/sh
+#
+# Copyright (C) 2013 OpenMediaVault Plugin Developers
+#
+# This file is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# This file is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this file. If not, see <http://www.gnu.org/licenses/>.
+
+set -e
+
+. /etc/default/openmediavault
+. /usr/share/openmediavault/scripts/helper-functions
+
+OMV_PLUGIN_XPATH=//services/virtualhosts
+OMV_VIRTUAL_HOSTS_XPATH=${OMV_PLUGIN_XPATH}/virtual_hosts
+OMV_VIRTUAL_HOST_XPATH=${OMV_VIRTUAL_HOSTS_XPATH}/virtual_host
+
+OMV_APACHE2_CONF_NAME=openmediavault-virtualhosts
+OMV_APACHE2_CONF=/etc/apache2/sites-available/${OMV_APACHE2_CONF_NAME}
+OMV_APACHE2_CONF_ENABLED=/etc/apache2/sites-enabled/${OMV_APACHE2_CONF_NAME}
+
+# Disable and remove current site
+if [ -e ${OMV_APACHE2_CONF_ENABLED} ]; then
+    /usr/sbin/a2dissite ${OMV_APACHE2_CONF_NAME}
+fi
+
+if [ -e "${OMV_APACHE2_CONF}" ]; then
+    /bin/rm "${OMV_APACHE2_CONF}"
+fi
+
+if [ "$(omv_config_get "${OMV_PLUGIN_XPATH}/enable")" -eq "1" ]; then
+
+    # Add Listen ports
+
+    # Add default ServerName port if used
+    default_port=$(omv_config_get "${OMV_PLUGIN_XPATH}/server_name_default_port")
+    count=$(omv_config_get_count "${OMV_VIRTUAL_HOST_XPATH}[enable='1' and host_type>'0' and server_name_use_default_port='1']")
+    if [ $count -gt 0 ]; then
+        echo "Listen *:${default_port}" >> ${OMV_APACHE2_CONF}
+        echo "NameVirtualHost *:${default_port}" >> ${OMV_APACHE2_CONF}
+    fi
+
+    # Add VirtualHosts ports
+    xmlstarlet sel -t -m "${OMV_VIRTUAL_HOST_XPATH}[enable='1']" \
+        --if "host_type[. = '0'] or host_type[. = '2']" \
+            -v "concat('Listen *:', port)" -n \
+        --elif "host_type[. = '1'] and server_name_use_default_port[. = '0']" \
+            -v "concat('Listen *:', port)" -n \
+        --break \
+        --if "host_type[. > '0'] and server_name_use_default_port[. = '0']" \
+            -v "concat('NameVirtualHost *:', port)" -n \
+        --break \
+        ${OMV_CONFIG_FILE} | xmlstarlet unesc >> ${OMV_APACHE2_CONF}
+
+    # Iterate through virtual hosts
+    virtual_host_count=$(omv_config_get_count "${OMV_VIRTUAL_HOST_XPATH}[enable = '1']")
+    index=1
+    while [ $index -lt $virtual_host_count -o $index -eq $virtual_host_count ]; do
+
+        CURRENT_VIRTUAL_HOST_XPATH="${OMV_VIRTUAL_HOST_XPATH}[enable = '1' and position()=${index}]"
+
+        # Get Document_Root
+        document_root_ref=$(omv_config_get "${CURRENT_VIRTUAL_HOST_XPATH}/document_root")
+        document_root=$(omv_get_sharedfolder_path "${document_root_ref}")
+
+        xmlstarlet sel -t -m "${CURRENT_VIRTUAL_HOST_XPATH}" \
+            -o "<VirtualHost" \
+                --if "host_type[. = '0'] or host_type[. = '2']" \
+                    -v "concat(' *:', port)" \
+                --elif "host_type[. = '1'] and server_name_use_default_port[. = '0']" \
+                    -v "concat(' *:', port)" \
+                --break \
+                --if "host_type[. > '0'] and server_name_use_default_port[. = '1']" \
+                    -o " *:${default_port}" \
+                --break \
+            -o ">" -n \
+            --if "host_type[. > '0'] and string-length(server_name) > 0" \
+                -v "concat('    ServerName ', server_name)" -n \
+            --break \
+            -o "    UseCanonicalName Off" -n \
+            -o "    ServerSignature Off" -n \
+            -o "    DocumentRoot \"${document_root}\"" -n \
+            -m "alias" \
+                -o "    Alias " -v "alias_url" -o " " -v "alias_path" -n \
+            --break \
+            -o "    <Directory \"${document_root}\">" -n \
+            -o "        Options " \
+            --if "options_exec_cgi[. = '1']" -o "+" --else -o "-" --break \
+            -o "ExecCGI " \
+            --if "options_follow_symlinks[. = '1']" -o "+" --else -o "-" --break \
+            -o "FollowSymlinks " \
+            --if "options_includes[. = '1']" -o "+" --else -o "-" --break \
+            -o "Includes " \
+            --if "options_indexes[. = '1']" -o "+" --else -o "-" --break \
+            -o "Indexes " \
+            --if "options_multi_views[. = '1']" -o "+" --else -o "-" --break \
+            -o "MultiViews " \
+            --if "options_symlinks_if_owner_match[. = '1']" -o "+" --else -o "-" --break \
+            -o "SymLinksIfOwnerMatch" \
+            -n \
+            -o "        AllowOverride" \
+            --if "allow_override_auth_config[. = '1']" -o " AuthConfig" --break \
+            --if "allow_override_file_info[. = '1']" -o " FileInfo" --break \
+            --if "allow_override_indexes[. = '1']" -o " Indexes" --break \
+            --if "allow_override_limit[. = '1']" -o " Limit" --break \
+            --if "allow_override_options[. = '1']" -o " Options" --break \
+            --if "allow_override_auth_config[. = '0'] and allow_override_file_info[. = '0'] and allow_override_indexes[. = '0'] and allow_override_limit[. = '0'] and allow_override_options[. = '0']" \
+                -o " None" \
+            --break \
+            -n \
+            --if "string-length(extra_options) > 0" \
+                -v "concat('        ', extra_options)" -n \
+            --break \
+            -o "    </Directory>" -n \
+            -o "</VirtualHost>" -n --break \
+            ${OMV_CONFIG_FILE} | xmlstarlet unesc >> ${OMV_APACHE2_CONF}
+
+        index=$(( ${index} + 1 ))
+    done
+
+    /usr/sbin/a2ensite ${OMV_APACHE2_CONF_NAME}
+    /etc/init.d/apache2 reload
+
+fi
+
+exit 0

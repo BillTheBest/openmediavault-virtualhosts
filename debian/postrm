@@ -1,0 +1,38 @@
+#!/bin/sh
+
+set -e
+
+. /etc/default/openmediavault
+. /usr/share/openmediavault/scripts/helper-functions
+
+OMV_APACHE2_CONF_NAME=openmediavault-virtualhosts
+OMV_APACHE2_CONF=/etc/apache2/sites-available/${OMV_APACHE2_CONF_NAME}
+OMV_APACHE2_CONF_ENABLED=/etc/apache2/sites-enabled/${OMV_APACHE2_CONF_NAME}
+
+case "$1" in
+    purge)
+        omv_config_delete "//services/virtualhosts"
+    ;;
+
+    remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
+        # Disable and remove current site
+        if [ -e ${OMV_APACHE2_CONF_ENABLED} ]; then
+            /usr/sbin/a2dissite ${OMV_APACHE2_CONF_NAME}
+        fi
+
+        if [ -e "${OMV_APACHE2_CONF}" ]; then
+            /bin/rm "${OMV_APACHE2_CONF}"
+        fi
+
+        /etc/init.d/apache2 reload
+    ;;
+
+    *)
+        echo "postrm called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+#DEBHELPER#
+
+exit 0
