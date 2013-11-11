@@ -52,7 +52,7 @@ Ext.define("OMV.module.admin.service.virtualhosts.Settings", {
                 value         : 8000,
                 plugins    : [{
                     ptype : "fieldinfo",
-                    text  : _("Deault port to use with name-based VirtualHosts.")
+                    text  : _("Default port to use with name-based VirtualHosts.")
                 }]
             }]
         }];

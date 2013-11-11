@@ -434,7 +434,7 @@ class OMVRpcServiceVirtualHosts extends OMVRpcServiceAbstract
     private function buildHref($domain, $port)
     {
         $url = sprintf("http://%s:%s", $domain, $port);
-        return "<a href='$url'>$url</a>";
+        return "<a href='$url' target='_blank'>$url</a>";
     }
 
     private function getDefaultServerNamePort()
