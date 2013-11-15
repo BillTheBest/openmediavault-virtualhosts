@@ -61,6 +61,9 @@ class OMVRpcServiceVirtualHosts extends OMVRpcServiceAbstract
         $this->registerMethod('get');
         $this->registerMethod('set');
         $this->registerMethod('delete');
+
+        // Validation
+        $this->registerMethod('validatePort');
     }
 
     public function getSettings($params, $context)
@@ -109,7 +112,7 @@ class OMVRpcServiceVirtualHosts extends OMVRpcServiceAbstract
             "server_name_default_port" => $params['server_name_default_port']
         );
 
-        if ($this->portIsUsed($object['server_name_default_port'], null))
+        if ($this->portIsUsed($object['server_name_default_port'], null, true))
             throw new OMVException(OMVErrorMsg::E_CONFIG_OBJECT_INVALID,
                 "Selected port is already used");
 
@@ -429,13 +432,34 @@ class OMVRpcServiceVirtualHosts extends OMVRpcServiceAbstract
             "org.openmediavault.services.virtualhosts", $virtualHost);
     }
 
-    public function portIsUsed($port, $uuid)
+    public function validatePort($params, $context)
+    {
+        // Validate the RPC caller context.
+        $this->validateMethodContext($context, array(
+            "role" => OMV_ROLE_ADMINISTRATOR
+        ));
+
+        // Validate the parameters of the RPC service method.
+        $this->validateMethodParams($params, '{
+            "type"       : "object",
+            "properties" : {
+                "uuid" : {' . $GLOBALS['OMV_JSONSCHEMA_UUID_NONE'] . '},
+                "port" : { "type" : "integer" }
+            }
+        }');
+
+        return !$this->portIsUsed($params['port'], $params['uuid']);
+    }
+
+    private function portIsUsed($port, $uuid, $isDefaultServerNamePort = false)
     {
         global $xmlConfig;
 
         $xPath = sprintf("%s/virtual_host[port='%s']", $this->getVirtualHostsXPath(), $port);
         $virtualHost = $xmlConfig->get($xPath);
 
+        if ($this->getDefaultServerNamePort() == $port && !$isDefaultServerNamePort)
+            return true;
         if (!empty($virtualHost))
             if ($virtualHost['uuid'] != $uuid)
                 return true;

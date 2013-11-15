@@ -125,7 +125,29 @@ Ext.define("OMV.module.admin.service.virtualhosts.window.VirtualHost", {
                 maxValue      : 65535,
                 allowDecimals : false,
                 allowNegative : false,
-                value         : 8080
+                value         : 8080,
+                listeners     : {
+                    'change' : function(field, newValue, oldValue) {
+                        OMV.Rpc.request({
+                            scope : me,
+                            callback : function(id, success, response) {
+                                if (success) {
+                                    if (!response) {
+                                        field.markInvalid("This port is already used!");
+                                    }
+                                }
+                            },
+                            rpcData : {
+                                service : "VirtualHosts",
+                                method : "validatePort",
+                                params : {
+                                    uuid : me.uuid,
+                                    port : newValue
+                                }
+                            }
+                        });
+                    }
+                }
             },{
                 xtype      : "textfield",
                 name       : "server_name",
