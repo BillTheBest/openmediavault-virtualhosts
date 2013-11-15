@@ -25,6 +25,10 @@ require_once "openmediavault/notify.inc";
 
 class OMVRpcServiceVirtualHosts extends OMVRpcServiceAbstract
 {
+    const HOST_TYPE_PORT = 0;
+    const HOST_TYPE_NAME = 1;
+    const HOST_TYPE_BOTH = 2;
+
     private $_defaultServerNamePort = null;
 
     private function getXPath()
@@ -104,6 +108,10 @@ class OMVRpcServiceVirtualHosts extends OMVRpcServiceAbstract
             "enable"                   => array_boolval($params, 'enable'),
             "server_name_default_port" => $params['server_name_default_port']
         );
+
+        if ($this->portIsUsed($object['server_name_default_port'], null))
+            throw new OMVException(OMVErrorMsg::E_CONFIG_OBJECT_INVALID,
+                "Selected port is already used");
 
         // Set configuration object
         $xPath = sprintf("%s/enable", $this->getXPath(), $object['enable']);
@@ -246,11 +254,14 @@ class OMVRpcServiceVirtualHosts extends OMVRpcServiceAbstract
         // Build possible URLs
         $urls = array();
 
-        if ($virtualHost['host_type'] != 1) {
+        // If host type is not only name, add port-based link
+        if ($virtualHost['host_type'] != self::HOST_TYPE_NAME) {
             $urls[] = $this->buildHref('!domain!', $virtualHost['port']);
         }
 
-        if ($virtualHost['host_type'] > 0) {
+        // If host type is name or both, add ServerName link
+        if ($virtualHost['host_type'] > self::HOST_TYPE_PORT) {
+            // Get correct port
             $port = $virtualHost['port'];
 
             if ($virtualHost['server_name_use_default_port'])
@@ -353,8 +364,9 @@ class OMVRpcServiceVirtualHosts extends OMVRpcServiceAbstract
         else
             $virtualHost['alias'] = $params['aliases'];
 
-        if ($virtualHost['host_type'] != 1 ||
-            $virtualHost['host_type'] == 1 &&
+        // Check if choosen port is already used
+        if ($virtualHost['host_type'] != self::HOST_TYPE_NAME ||
+            $virtualHost['host_type'] == self::HOST_TYPE_NAME &&
             !$virtualHost['server_name_use_default_port'])
         {
             if ($this->portIsUsed($virtualHost['port'], $virtualHost['uuid']))
@@ -364,8 +376,8 @@ class OMVRpcServiceVirtualHosts extends OMVRpcServiceAbstract
             unset($virtualHost['port']);
         }
 
+        // Save configuration
         $success = false;
-
         $xPath = null;
 
         if (empty($params['uuid']))
@@ -427,6 +439,21 @@ class OMVRpcServiceVirtualHosts extends OMVRpcServiceAbstract
         if (!empty($virtualHost))
             if ($virtualHost['uuid'] != $uuid)
                 return true;
+
+        // Validate with webadmin ports
+        $webadminConfig = $xmlConfig->get("//webadmin");
+
+        if (!empty($webadminConfig)) {
+            $webadminPort    = intval($webadminConfig['port']);
+            $webadminSslPort = intval($webadminConfig['sslport']);
+            $forceSslOnly    = boolval($webadminConfig['forcesslonly']);
+            $enableSsl       = boolval($webadminConfig['enablessl']);
+
+            if ($webadminPort == $port && !$forceSslOnly)
+                return true;
+            if ($webadminSslPort == $port && $enableSsl)
+                return true;
+        }
 
         return false;
     }
