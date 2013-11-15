@@ -28,6 +28,10 @@ OMV_APACHE2_CONF_NAME=openmediavault-virtualhosts
 OMV_APACHE2_CONF=/etc/apache2/sites-available/${OMV_APACHE2_CONF_NAME}
 OMV_APACHE2_CONF_ENABLED=/etc/apache2/sites-enabled/${OMV_APACHE2_CONF_NAME}
 
+# HOST_TYPE_PORT = 0
+# HOST_TYPE_NAME = 1
+# HOST_TYPE_BOTH = 2
+
 # Disable and remove current site
 if [ -e ${OMV_APACHE2_CONF_ENABLED} ]; then
     /usr/sbin/a2dissite ${OMV_APACHE2_CONF_NAME}
@@ -128,7 +132,8 @@ if [ "$(omv_config_get "${OMV_PLUGIN_XPATH}/enable")" -eq "1" ]; then
     done
 
     /usr/sbin/a2ensite ${OMV_APACHE2_CONF_NAME}
-    /etc/init.d/apache2 reload
+    /usr/sbin/apache2ctl configtest
+    /etc/init.d/apache2 graceful
 
 fi
 

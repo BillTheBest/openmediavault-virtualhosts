@@ -45,24 +45,6 @@ class OMVModuleVirtualHosts extends OMVModuleServiceAbstract implements OMVINoti
                 $cmd, implode("\n", $output));
 	}
 
-    /**
-     * Start the managed service
-     */
-    public function startService()
-    {
-        //$initd = new OMVSysVInitScript('apache2', true);
-        //$initd->invoke('graceful');
-    }
-
-    /**
-     * Stop the managed service
-     */
-    public function stopService()
-    {
-        //$initd = new OMVSysVInitScript('apache2', false);
-        //$initd->invoke('graceful');
-    }
-
 	/**
 	 * Bind listeners.
 	 */

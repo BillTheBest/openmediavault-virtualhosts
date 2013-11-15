@@ -24,7 +24,7 @@ case "$1" in
             /bin/rm "${OMV_APACHE2_CONF}"
         fi
 
-        /etc/init.d/apache2 reload
+        /etc/init.d/apache2 graceful
     ;;
 
     *)
