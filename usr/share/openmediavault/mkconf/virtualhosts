@@ -90,7 +90,7 @@ if [ "$(omv_config_get "${OMV_PLUGIN_XPATH}/enable")" -eq "1" ]; then
             -o "    ServerSignature Off" -n \
             -o "    DocumentRoot \"${document_root}\"" -n \
             -m "alias" \
-                -o "    Alias " -v "alias_url" -o " " -v "alias_path" -n \
+                -o "    Alias \"" -v "alias_url" -o "\" \"" -v "alias_path" -o "\"" -n \
             --break \
             -o "    <Directory \"${document_root}\">" -n \
             -o "        Options " \

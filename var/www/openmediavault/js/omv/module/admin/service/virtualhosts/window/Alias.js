@@ -29,11 +29,11 @@ Ext.define("OMV.module.admin.service.virtualhosts.window.Alias", {
         var me = this;
 
         return [{
-            xtype      : "textfield",
-            name       : "alias_url",
-            fieldLabel : _("URL"),
-            regex       : /^\/.*/i,
-            invalidText : _("The URL must start with /"),
+            xtype       : "textfield",
+            name        : "alias_url",
+            fieldLabel  : _("URL"),
+            regex       : /^\/\w+/i,
+            invalidText : _("The URL must start with a '/'."),
             allowBlank  : false,
             allowNone   : false,
         },{
@@ -71,11 +71,11 @@ Ext.define("OMV.module.admin.service.virtualhosts.window.Alias", {
                 text  : _("Automatically populate the path with the path of the selected shared folder.")
             }]
         },{
-            xtype      : "textfield",
-            name       : "alias_path",
-            fieldLabel : _("Path"),
-            regex       : /^\/.*/i,
-            invalidText : _("The path must be valid UNIX path"),
+            xtype       : "textfield",
+            name        : "alias_path",
+            fieldLabel  : _("Path"),
+            regex       : /^\/[^\0]+/i,
+            invalidText : _("The path must start with a '/'."),
             allowBlank  : false,
             allowNone   : false
         }];
