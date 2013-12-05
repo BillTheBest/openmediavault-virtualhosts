@@ -7,5 +7,5 @@ Standards-Version: 3.9.3
 
 Package: openmediavault-virtualhosts
 Architecture: all
-Depends: openmediavault (>= 0.5), ${misc:Depends}
+Depends: openmediavault (>= 0.5), openmediavault (<< 0.6), ${misc:Depends}
 Description: VirtualHost plugin for OpenMediaVault.

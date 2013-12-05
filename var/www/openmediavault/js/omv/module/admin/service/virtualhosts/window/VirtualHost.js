@@ -106,7 +106,7 @@ Ext.define("OMV.module.admin.service.virtualhosts.window.VirtualHost", {
                     ],
                     data   : [
                         [ 0, _("Port") ],
-                        [ 1, _("ServerName") ],
+                        [ 1, "ServerName" ],
                         [ 2, _("Both") ],
                     ]
                 }),
@@ -151,7 +151,7 @@ Ext.define("OMV.module.admin.service.virtualhosts.window.VirtualHost", {
             },{
                 xtype      : "textfield",
                 name       : "server_name",
-                fieldLabel : _("ServerName"),
+                fieldLabel : "ServerName",
                 allowBlank : true,
                 readOnly   : true,
                 hidden     : true
@@ -169,7 +169,7 @@ Ext.define("OMV.module.admin.service.virtualhosts.window.VirtualHost", {
             }]
         },{
             xtype : "fieldset",
-            title : _("Aliases"),
+            title : "Aliases",
             items : [{
                 xtype      : "gridfield",
                 name       : "aliases",
@@ -177,7 +177,7 @@ Ext.define("OMV.module.admin.service.virtualhosts.window.VirtualHost", {
             }]
         },{
             xtype    : "fieldset",
-            title    : _("Options"),
+            title    : "Options",
             layout   : "column",
             defaults : {
                 columnWidth : 0.5,
@@ -192,17 +192,17 @@ Ext.define("OMV.module.admin.service.virtualhosts.window.VirtualHost", {
                 items : [{
                     xtype      : "checkbox",
                     name       : "options_exec_cgi",
-                    boxLabel   : _("ExecCGI"),
+                    boxLabel   : "ExecCGI",
                     checked    : false
                 },{
                     xtype      : "checkbox",
                     name       : "options_follow_symlinks",
-                    boxLabel   : _("FollowSymlinks"),
+                    boxLabel   : "FollowSymlinks",
                     checked    : false
                 },{
                     xtype      : "checkbox",
                     name       : "options_includes",
-                    boxLabel   : _("Includes"),
+                    boxLabel   : "Includes",
                     checked    : false
                 }]
             },{
@@ -213,23 +213,23 @@ Ext.define("OMV.module.admin.service.virtualhosts.window.VirtualHost", {
                 items : [{
                     xtype      : "checkbox",
                     name       : "options_indexes",
-                    boxLabel   : _("Indexes"),
+                    boxLabel   : "Indexes",
                     checked    : false
                 },{
                     xtype      : "checkbox",
                     name       : "options_multi_views",
-                    boxLabel   : _("MultiViews"),
+                    boxLabel   : "MultiViews",
                     checked    : false
                 },{
                     xtype      : "checkbox",
                     name       : "options_symlinks_if_owner_match",
-                    boxLabel   : _("SymlinksIfOwnerMatch"),
+                    boxLabel   : "SymlinksIfOwnerMatch",
                     checked    : false
                 }]
             }]
         },{
             xtype : "fieldset",
-            title : _("AllowOverride"),
+            title : "AllowOverride",
             layout   : "column",
             defaults : {
                 columnWidth : 0.5,
@@ -244,17 +244,17 @@ Ext.define("OMV.module.admin.service.virtualhosts.window.VirtualHost", {
                 items : [{
                     xtype      : "checkbox",
                     name       : "allow_override_auth_config",
-                    boxLabel   : _("AuthConfig"),
+                    boxLabel   : "AuthConfig",
                     checked    : false
                 },{
                     xtype      : "checkbox",
                     name       : "allow_override_file_info",
-                    boxLabel   : _("FileInfo"),
+                    boxLabel   : "FileInfo",
                     checked    : false
                 },{
                     xtype      : "checkbox",
                     name       : "allow_override_indexes",
-                    boxLabel   : _("Indexes"),
+                    boxLabel   : "Indexes",
                     checked    : false
                 }]
             },{
@@ -265,12 +265,12 @@ Ext.define("OMV.module.admin.service.virtualhosts.window.VirtualHost", {
                 items : [{
                     xtype      : "checkbox",
                     name       : "allow_override_limit",
-                    boxLabel   : _("Limit"),
+                    boxLabel   : "Limit",
                     checked    : false
                 },{
                     xtype      : "checkbox",
                     name       : "allow_override_options",
-                    boxLabel   : _("Options"),
+                    boxLabel   : "Options",
                     checked    : false
                 }]
             }]
