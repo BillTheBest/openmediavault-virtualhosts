@@ -1,0 +1,150 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# dezi121 <by@songming.me>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: openmediavault-virtualhosts\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-11-15 16:25-0600\n"
+"PO-Revision-Date: 2013-12-16 02:53+0000\n"
+"Last-Translator: dezi121 <by@songming.me>\n"
+"Language-Team: Chinese (China) (http://www.transifex.com/projects/p/openmediavault-virtualhosts/language/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Add"
+msgstr "添加"
+
+msgid "Add alias"
+msgstr "添加别名"
+
+msgid "Add virtual host"
+msgstr "添加虚拟主机"
+
+msgid "Alias"
+msgstr "别名"
+
+msgid "Aliases"
+msgstr "别名列表"
+
+msgid "AllowOverride"
+msgstr ""
+
+msgid "AuthConfig"
+msgstr ""
+
+msgid ""
+"Automatically populate the path with the path of the selected shared folder."
+msgstr ""
+
+msgid "Both"
+msgstr "同时"
+
+msgid "Default ServerName port"
+msgstr ""
+
+msgid "Default port to use with name-based VirtualHosts."
+msgstr ""
+
+msgid "Delete"
+msgstr "删除"
+
+msgid "Document root"
+msgstr "文档根目录"
+
+msgid "Edit virtual host"
+msgstr "编辑虚拟主机"
+
+msgid "Enable"
+msgstr "启动"
+
+msgid "Enabled"
+msgstr "运行"
+
+msgid "ExecCGI"
+msgstr ""
+
+msgid "Extra options"
+msgstr "附加选项"
+
+msgid "FileInfo"
+msgstr "文件信息"
+
+msgid "FollowSymlinks"
+msgstr ""
+
+msgid "General"
+msgstr "常规"
+
+msgid "Host type"
+msgstr "主机类型"
+
+msgid "Includes"
+msgstr "包含"
+
+msgid "Indexes"
+msgstr "索引"
+
+msgid "Limit"
+msgstr "限制"
+
+msgid "MultiViews"
+msgstr ""
+
+msgid "Options"
+msgstr "选项"
+
+msgid "Path"
+msgstr "路径"
+
+msgid "Port"
+msgstr "端口"
+
+msgid "ServerName"
+msgstr "主机名称"
+
+msgid "Settings"
+msgstr "设置"
+
+msgid "Shared folder"
+msgstr "共享文件夹"
+
+msgid "SymlinksIfOwnerMatch"
+msgstr ""
+
+msgid "The URL must start with a '/'."
+msgstr "URL地址必须以“/”开头"
+
+msgid ""
+"The location needs to have at least read permissions for the user/group www-"
+"data"
+msgstr "目录至少要给用户/组www-data赋予读取权限"
+
+msgid "The path must start with a '/'."
+msgstr "路径必须以“/”开头"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "UUID"
+msgstr "UUID"
+
+msgid ""
+"Untick to host the ServerName with the portnumber specified in the field "
+"port."
+msgstr ""
+
+msgid "Use default port for ServerName"
+msgstr ""
+
+msgid "Virtual hosts"
+msgstr "虚拟主机"
+
+msgid "VirtualHosts"
+msgstr "虚拟主机"

@@ -1,0 +1,150 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# артур Мудрых <arturmon82@gmail.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: openmediavault-virtualhosts\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-11-15 16:25-0600\n"
+"PO-Revision-Date: 2013-12-22 07:51+0000\n"
+"Last-Translator: артур Мудрых <arturmon82@gmail.com>\n"
+"Language-Team: Russian (http://www.transifex.com/projects/p/openmediavault-virtualhosts/language/ru/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+msgid "Add"
+msgstr "Добавить"
+
+msgid "Add alias"
+msgstr "Добавить псевдоним"
+
+msgid "Add virtual host"
+msgstr "Добавить виртуальный хост"
+
+msgid "Alias"
+msgstr "Псевдоним"
+
+msgid "Aliases"
+msgstr "Псевдонимы"
+
+msgid "AllowOverride"
+msgstr "AllowOverride"
+
+msgid "AuthConfig"
+msgstr "AuthConfig"
+
+msgid ""
+"Automatically populate the path with the path of the selected shared folder."
+msgstr "Автоматическое заполнение пути к выбранной общей папке."
+
+msgid "Both"
+msgstr "и тот и другой"
+
+msgid "Default ServerName port"
+msgstr "Порт по умолчанию ServerName"
+
+msgid "Default port to use with name-based VirtualHosts."
+msgstr "Использовать порт по умолчанию с именем на основе VirtualHosts."
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Document root"
+msgstr "Корень документа"
+
+msgid "Edit virtual host"
+msgstr "Редактировать виртуальный хост"
+
+msgid "Enable"
+msgstr "Включить"
+
+msgid "Enabled"
+msgstr "Включено"
+
+msgid "ExecCGI"
+msgstr "ExecCGI"
+
+msgid "Extra options"
+msgstr "Дополнительные опции"
+
+msgid "FileInfo"
+msgstr "FileInfo"
+
+msgid "FollowSymlinks"
+msgstr "FollowSymlinks"
+
+msgid "General"
+msgstr "Общие"
+
+msgid "Host type"
+msgstr "Тип хоста"
+
+msgid "Includes"
+msgstr "Includes"
+
+msgid "Indexes"
+msgstr "Indexes"
+
+msgid "Limit"
+msgstr "Limit"
+
+msgid "MultiViews"
+msgstr "MultiViews"
+
+msgid "Options"
+msgstr "Options"
+
+msgid "Path"
+msgstr "Путь"
+
+msgid "Port"
+msgstr "Порт"
+
+msgid "ServerName"
+msgstr "ServerName"
+
+msgid "Settings"
+msgstr "Настройки"
+
+msgid "Shared folder"
+msgstr "Общая папка"
+
+msgid "SymlinksIfOwnerMatch"
+msgstr "SymlinksIfOwnerMatch"
+
+msgid "The URL must start with a '/'."
+msgstr "URL должен начинаться с '/'."
+
+msgid ""
+"The location needs to have at least read permissions for the user/group www-"
+"data"
+msgstr "Должен иметь по крайней мере разрешение на чтение для пользователя / группы www-data"
+
+msgid "The path must start with a '/'."
+msgstr "Путь должен начинаться с '/'."
+
+msgid "URL"
+msgstr "URL"
+
+msgid "UUID"
+msgstr "UUID"
+
+msgid ""
+"Untick to host the ServerName with the portnumber specified in the field "
+"port."
+msgstr "Снимите галочку провести имя сервера с номера порта, указанного в поле порта."
+
+msgid "Use default port for ServerName"
+msgstr "Использовать порт по умолчанию для ServerName"
+
+msgid "Virtual hosts"
+msgstr "Виртуальные хосты"
+
+msgid "VirtualHosts"
+msgstr "VirtualHosts"

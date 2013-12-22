@@ -1,0 +1,150 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# davidh2k <davidh1990@gmx.de>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: openmediavault-virtualhosts\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-11-15 16:25-0600\n"
+"PO-Revision-Date: 2013-11-20 09:24+0000\n"
+"Last-Translator: davidh2k <davidh1990@gmx.de>\n"
+"Language-Team: German (http://www.transifex.com/projects/p/openmediavault-virtualhosts/language/de/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Add"
+msgstr "Hinzufügen"
+
+msgid "Add alias"
+msgstr "Alias hinzufügen"
+
+msgid "Add virtual host"
+msgstr "Virtuellen Host hinzufügen"
+
+msgid "Alias"
+msgstr "Alias"
+
+msgid "Aliases"
+msgstr "Aliases"
+
+msgid "AllowOverride"
+msgstr "AllowOverride"
+
+msgid "AuthConfig"
+msgstr "AuthConfig"
+
+msgid ""
+"Automatically populate the path with the path of the selected shared folder."
+msgstr "Bestücke den Pfad automatisch mit dem Pfad des ausgewählten freigegebenen Ordners."
+
+msgid "Both"
+msgstr "Beide"
+
+msgid "Default ServerName port"
+msgstr "Standard ServerName Port"
+
+msgid "Default port to use with name-based VirtualHosts."
+msgstr "Standardport der für namesbasierte Virtuelle Hosts genutzt wird."
+
+msgid "Delete"
+msgstr "Entfernen"
+
+msgid "Document root"
+msgstr "Wurzelverzeichnis"
+
+msgid "Edit virtual host"
+msgstr "Virtuellen Host bearbeiten"
+
+msgid "Enable"
+msgstr "Aktivieren"
+
+msgid "Enabled"
+msgstr "Aktiviert"
+
+msgid "ExecCGI"
+msgstr "ExecCGI"
+
+msgid "Extra options"
+msgstr "Extra Optionen"
+
+msgid "FileInfo"
+msgstr "DateiInfo"
+
+msgid "FollowSymlinks"
+msgstr "Folge Symlinks"
+
+msgid "General"
+msgstr "Allgemein"
+
+msgid "Host type"
+msgstr "Host Typ"
+
+msgid "Includes"
+msgstr "Includes"
+
+msgid "Indexes"
+msgstr "Indexes"
+
+msgid "Limit"
+msgstr "Begrenzung"
+
+msgid "MultiViews"
+msgstr "MultiViews"
+
+msgid "Options"
+msgstr "Optionen"
+
+msgid "Path"
+msgstr "Pfad"
+
+msgid "Port"
+msgstr "Port"
+
+msgid "ServerName"
+msgstr "ServerName"
+
+msgid "Settings"
+msgstr "Einstellungen"
+
+msgid "Shared folder"
+msgstr "Freigegebener Ordner"
+
+msgid "SymlinksIfOwnerMatch"
+msgstr "SymlinksWennGleicherBesitzer"
+
+msgid "The URL must start with a '/'."
+msgstr "Die URL muss mit einem '/' beginnen."
+
+msgid ""
+"The location needs to have at least read permissions for the user/group www-"
+"data"
+msgstr "Das Verzeichnis muss mindestens Leseberechtigung für den Benutzer/die Gruppe www-data haben"
+
+msgid "The path must start with a '/'."
+msgstr "Der Pfad muss mit einem '/' beginnen."
+
+msgid "URL"
+msgstr "URL"
+
+msgid "UUID"
+msgstr "UUID"
+
+msgid ""
+"Untick to host the ServerName with the portnumber specified in the field "
+"port."
+msgstr "Entferne den Haken um den ServerNamen mit der Portnummer zu hosten die im Feld Port spezifiziert wurde."
+
+msgid "Use default port for ServerName"
+msgstr "Benutze den Standardport für ServerName"
+
+msgid "Virtual hosts"
+msgstr "Virtuelle Hosts"
+
+msgid "VirtualHosts"
+msgstr "Virtuelle Hosts"

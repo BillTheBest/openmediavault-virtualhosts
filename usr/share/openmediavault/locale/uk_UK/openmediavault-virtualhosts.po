@@ -1,0 +1,150 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# zubr139 <zubr139@ukr.net>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: openmediavault-virtualhosts\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-11-15 16:25-0600\n"
+"PO-Revision-Date: 2013-11-22 23:46+0000\n"
+"Last-Translator: zubr139 <zubr139@ukr.net>\n"
+"Language-Team: Ukrainian (http://www.transifex.com/projects/p/openmediavault-virtualhosts/language/uk/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+msgid "Add"
+msgstr "Додати"
+
+msgid "Add alias"
+msgstr "Додати псевдонім"
+
+msgid "Add virtual host"
+msgstr "Додати віртуальний хост"
+
+msgid "Alias"
+msgstr "Псевдонім"
+
+msgid "Aliases"
+msgstr "Псевдоніми"
+
+msgid "AllowOverride"
+msgstr ""
+
+msgid "AuthConfig"
+msgstr ""
+
+msgid ""
+"Automatically populate the path with the path of the selected shared folder."
+msgstr "Автоматично заповнити шлях до обраної тек спільного доступу."
+
+msgid "Both"
+msgstr "Обидва"
+
+msgid "Default ServerName port"
+msgstr "Типовий порт ServerName"
+
+msgid "Default port to use with name-based VirtualHosts."
+msgstr "Використовувати типовий порт на основі назви VirtualHosts."
+
+msgid "Delete"
+msgstr "Видаляти"
+
+msgid "Document root"
+msgstr ""
+
+msgid "Edit virtual host"
+msgstr "Редагувати віртуальний хост"
+
+msgid "Enable"
+msgstr "Увімкнути"
+
+msgid "Enabled"
+msgstr "Увімкнено"
+
+msgid "ExecCGI"
+msgstr ""
+
+msgid "Extra options"
+msgstr "Додаткові опції"
+
+msgid "FileInfo"
+msgstr "Інформація про файл"
+
+msgid "FollowSymlinks"
+msgstr ""
+
+msgid "General"
+msgstr "Загальне"
+
+msgid "Host type"
+msgstr "Тип хосту"
+
+msgid "Includes"
+msgstr ""
+
+msgid "Indexes"
+msgstr ""
+
+msgid "Limit"
+msgstr ""
+
+msgid "MultiViews"
+msgstr ""
+
+msgid "Options"
+msgstr "Опції"
+
+msgid "Path"
+msgstr "Шлях"
+
+msgid "Port"
+msgstr "Порт"
+
+msgid "ServerName"
+msgstr "ServerName"
+
+msgid "Settings"
+msgstr "Налаштування"
+
+msgid "Shared folder"
+msgstr "Спільна тека"
+
+msgid "SymlinksIfOwnerMatch"
+msgstr ""
+
+msgid "The URL must start with a '/'."
+msgstr "URL мусить починатися з '/'."
+
+msgid ""
+"The location needs to have at least read permissions for the user/group www-"
+"data"
+msgstr ""
+
+msgid "The path must start with a '/'."
+msgstr "Шлях повинен починатися з '/'."
+
+msgid "URL"
+msgstr "URL"
+
+msgid "UUID"
+msgstr "UUID"
+
+msgid ""
+"Untick to host the ServerName with the portnumber specified in the field "
+"port."
+msgstr ""
+
+msgid "Use default port for ServerName"
+msgstr "Використовувати типовий порт для ServerName"
+
+msgid "Virtual hosts"
+msgstr "Віртуальні хости"
+
+msgid "VirtualHosts"
+msgstr "VirtualHosts"
