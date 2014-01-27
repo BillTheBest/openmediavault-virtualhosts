@@ -1,11 +1,19 @@
+openmediavault-virtualhosts (0.5.2) stable; urgency=medium
+
+  * Increase LimitRequestFieldSize to avoid error 400
+  * Stopped postrm from removing configuration when just upgrading
+  * Add usage of public subdirectory when creating a virtual host
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Mon, 27 Jan 2014 17:18:17 +0100
+
 openmediavault-virtualhosts (0.5.1) stable; urgency=low
 
   * Add locales
 
- -- OpenMediaVault Plugin Developers <plugins@omv-extras.prg>  Sun, 22 Dec 2013 11:48:14 -0500
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Sun, 22 Dec 2013 11:48:14 -0500
 
 openmediavault-virtualhosts (0.5) stable; urgency=low
 
   * Initial release
 
- -- OpenMediaVault Plugin Developers <plugins@omv-extras.prg>  Fri, 04 Oct 2013 18:55:14 +0200
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Fri, 04 Oct 2013 18:55:14 +0200
