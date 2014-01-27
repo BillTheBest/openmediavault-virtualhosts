@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# dezi121 <by@songming.me>, 2013
+# dezi121 <by@songming.me>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-virtualhosts\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-15 16:25-0600\n"
-"PO-Revision-Date: 2013-12-16 02:53+0000\n"
+"PO-Revision-Date: 2014-01-09 14:57+0000\n"
 "Last-Translator: dezi121 <by@songming.me>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/openmediavault-virtualhosts/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -34,23 +34,23 @@ msgid "Aliases"
 msgstr "别名列表"
 
 msgid "AllowOverride"
-msgstr ""
+msgstr "允许覆盖"
 
 msgid "AuthConfig"
-msgstr ""
+msgstr "AuthConfig"
 
 msgid ""
 "Automatically populate the path with the path of the selected shared folder."
-msgstr ""
+msgstr "自动填充选中的共享文件夹路径。"
 
 msgid "Both"
 msgstr "同时"
 
 msgid "Default ServerName port"
-msgstr ""
+msgstr "默认主机名端口"
 
 msgid "Default port to use with name-based VirtualHosts."
-msgstr ""
+msgstr "默认端口用于基于名称的虚拟主机。"
 
 msgid "Delete"
 msgstr "删除"
@@ -68,7 +68,7 @@ msgid "Enabled"
 msgstr "运行"
 
 msgid "ExecCGI"
-msgstr ""
+msgstr "ExecCGI"
 
 msgid "Extra options"
 msgstr "附加选项"
@@ -77,7 +77,7 @@ msgid "FileInfo"
 msgstr "文件信息"
 
 msgid "FollowSymlinks"
-msgstr ""
+msgstr "FollowSymlinks"
 
 msgid "General"
 msgstr "常规"
@@ -86,16 +86,16 @@ msgid "Host type"
 msgstr "主机类型"
 
 msgid "Includes"
-msgstr "包含"
+msgstr "Includes"
 
 msgid "Indexes"
-msgstr "索引"
+msgstr "Indexes"
 
 msgid "Limit"
-msgstr "限制"
+msgstr "Limit"
 
 msgid "MultiViews"
-msgstr ""
+msgstr "MultiViews"
 
 msgid "Options"
 msgstr "选项"
@@ -107,7 +107,7 @@ msgid "Port"
 msgstr "端口"
 
 msgid "ServerName"
-msgstr "主机名称"
+msgstr "主机名"
 
 msgid "Settings"
 msgstr "设置"
@@ -116,7 +116,7 @@ msgid "Shared folder"
 msgstr "共享文件夹"
 
 msgid "SymlinksIfOwnerMatch"
-msgstr ""
+msgstr "SymlinksIfOwnerMatch"
 
 msgid "The URL must start with a '/'."
 msgstr "URL地址必须以“/”开头"
@@ -138,13 +138,13 @@ msgstr "UUID"
 msgid ""
 "Untick to host the ServerName with the portnumber specified in the field "
 "port."
-msgstr ""
+msgstr "取消选中则主机的主机名和端口号将使用指定的端口。"
 
 msgid "Use default port for ServerName"
-msgstr ""
+msgstr "使用默认的主机名端口"
 
 msgid "Virtual hosts"
 msgstr "虚拟主机"
 
 msgid "VirtualHosts"
-msgstr "虚拟主机"
+msgstr "VirtualHosts"

@@ -3,29 +3,29 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# polxmod <paolo.velati@gmail.com>, 2014
+# Raul Fernandez Garcia <raulfg3@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-virtualhosts\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-15 16:25-0600\n"
-"PO-Revision-Date: 2014-01-13 00:51+0000\n"
-"Last-Translator: polxmod <paolo.velati@gmail.com>\n"
-"Language-Team: Italian (http://www.transifex.com/projects/p/openmediavault-virtualhosts/language/it/)\n"
+"PO-Revision-Date: 2014-01-27 12:27+0000\n"
+"Last-Translator: Raul Fernandez Garcia <raulfg3@gmail.com>\n"
+"Language-Team: Spanish (http://www.transifex.com/projects/p/openmediavault-virtualhosts/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: it\n"
+"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Add"
-msgstr "Aggiungi"
+msgstr "Añadir"
 
 msgid "Add alias"
-msgstr "Aggiungi alias"
+msgstr "Añadir alias"
 
 msgid "Add virtual host"
-msgstr "Aggiungi host virtuale"
+msgstr "Añadir Host virtual"
 
 msgid "Alias"
 msgstr "Alias"
@@ -34,100 +34,100 @@ msgid "Aliases"
 msgstr "Alias"
 
 msgid "AllowOverride"
-msgstr "AllowOverride"
+msgstr "Permitir anulación"
 
 msgid "AuthConfig"
-msgstr "AuthConfig"
+msgstr "Configuración de Autoridad."
 
 msgid ""
 "Automatically populate the path with the path of the selected shared folder."
-msgstr ""
+msgstr "Completar la ruta automáticamente con la ruta de la carpeta compartida seleccionada."
 
 msgid "Both"
-msgstr "Entrambi"
+msgstr "Ambos"
 
 msgid "Default ServerName port"
-msgstr ""
+msgstr "Puerto por defecto del servidor"
 
 msgid "Default port to use with name-based VirtualHosts."
-msgstr ""
+msgstr "Puerto por defecto a usar en los Host Virtuales basados en Nombre"
 
 msgid "Delete"
-msgstr "Elimina"
+msgstr "Borrar"
 
 msgid "Document root"
-msgstr ""
+msgstr "Raíz de documentos"
 
 msgid "Edit virtual host"
-msgstr "Modifica host virtuale"
+msgstr "Editar Host virtual"
 
 msgid "Enable"
-msgstr "Abilita"
+msgstr "Habilitar"
 
 msgid "Enabled"
-msgstr "Abilitato"
+msgstr "Habilitado"
 
 msgid "ExecCGI"
 msgstr "ExecCGI"
 
 msgid "Extra options"
-msgstr "Opzioni Extra"
+msgstr "Opciones"
 
 msgid "FileInfo"
-msgstr "FileInfo"
+msgstr "Información"
 
 msgid "FollowSymlinks"
-msgstr "FollowSymlinks"
+msgstr "Seguir enlaces simbólicos"
 
 msgid "General"
-msgstr "Generale"
+msgstr "General"
 
 msgid "Host type"
-msgstr "Tipo Host"
+msgstr "Tipo de Host"
 
 msgid "Includes"
-msgstr ""
+msgstr "Incluidos"
 
 msgid "Indexes"
-msgstr "Indici"
+msgstr "Indices"
 
 msgid "Limit"
-msgstr "Limite"
+msgstr "Limites"
 
 msgid "MultiViews"
-msgstr ""
+msgstr "Multiples Vistas"
 
 msgid "Options"
-msgstr "Opzioni"
+msgstr "Opciones"
 
 msgid "Path"
-msgstr ""
+msgstr "Ruta"
 
 msgid "Port"
-msgstr "Porta"
+msgstr "Puerto"
 
 msgid "ServerName"
-msgstr "ServerName"
+msgstr "Nombre del servidor"
 
 msgid "Settings"
-msgstr "Impostazioni"
+msgstr "Opciones"
 
 msgid "Shared folder"
-msgstr "Cartella condivisa"
+msgstr "Carpeta compartida"
 
 msgid "SymlinksIfOwnerMatch"
-msgstr ""
+msgstr "Permitir enlaces simbolicos si se es dueño"
 
 msgid "The URL must start with a '/'."
-msgstr ""
+msgstr "La URL debe comenzar por '/'"
 
 msgid ""
 "The location needs to have at least read permissions for the user/group www-"
 "data"
-msgstr ""
+msgstr "La ubicación debe tener al menos permisos de lectura del usuario:grupo www-data"
 
 msgid "The path must start with a '/'."
-msgstr ""
+msgstr "La ruta debe comenzar por '/'"
 
 msgid "URL"
 msgstr "URL"
@@ -138,13 +138,13 @@ msgstr "UUID"
 msgid ""
 "Untick to host the ServerName with the portnumber specified in the field "
 "port."
-msgstr ""
+msgstr "Desmarque para utilizar el ServerName con el número de puerto especificado en el puerto de campo."
 
 msgid "Use default port for ServerName"
-msgstr ""
+msgstr "Usar el puerto por defecto del servidor"
 
 msgid "Virtual hosts"
-msgstr "Host Virtuale"
+msgstr "Virtual hosts"
 
 msgid "VirtualHosts"
 msgstr "VirtualHosts"
