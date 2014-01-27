@@ -76,6 +76,10 @@ if [ "$(omv_config_get "${OMV_PLUGIN_XPATH}/enable")" -eq "1" ]; then
         document_root_ref=$(omv_config_get "${CURRENT_VIRTUAL_HOST_XPATH}/document_root")
         document_root=$(omv_get_sharedfolder_path "${document_root_ref}")
 
+        if [ "$(omv_config_get "${CURRENT_VIRTUAL_HOST_XPATH}/use_public_directory")" -eq "1" ]; then
+            document_root="${document_root}$(omv_config_get "${CURRENT_VIRTUAL_HOST_XPATH}/public_directory")"
+        fi
+
         xmlstarlet sel -t -m "${CURRENT_VIRTUAL_HOST_XPATH}" \
             -o "<VirtualHost" \
                 --if "host_type[. = '0'] or host_type[. = '2']" \

@@ -36,6 +36,19 @@ Ext.define("OMV.module.admin.service.virtualhosts.window.VirtualHost", {
         ptype        : "linkedfields",
         correlations : [{
             name : [
+                "public_directory"
+            ],
+            conditions : [{
+                name  : "use_public_directory",
+                value : true
+            }],
+            properties : [
+                "show",
+                "!allowBlank",
+                "!readOnly"
+            ]
+        },{
+            name : [
                 "server_name",
                 "server_name_use_default_port"
             ],
@@ -94,6 +107,35 @@ Ext.define("OMV.module.admin.service.virtualhosts.window.VirtualHost", {
                     ptype : "fieldinfo",
                     text  : _("The location needs to have at least read permissions for the user/group www-data")
                 }]
+            },{
+                xtype      : "checkbox",
+                name       : "use_public_directory",
+                fieldLabel : _("Use public directory"),
+                checked    : false,
+                plugins    : [{
+                    ptype : "fieldinfo",
+                    text  : _("Use if you serve your public files in a subfolder like public_html or public. This folder will be the document root. It also avoids the need to create an additional shared folder in such cases.")
+                }]
+            },{
+                xtype      : "combo",
+                name       : "public_directory",
+                fieldLabel : _("Public directory"),
+                queryMode  : "local",
+                store      : Ext.create("Ext.data.ArrayStore", {
+                    fields : [
+                        "value"
+                    ],
+                    data   : [
+                        [ "public_html" ],
+                        [ "public" ],
+                    ]
+                }),
+                displayField  : "value",
+                valueField    : "value",
+                allowBlank    : false,
+                editable      : false,
+                triggerAction : "all",
+                value         : "public_html"
             },{
                 xtype      : "combo",
                 name       : "host_type",

@@ -207,6 +207,7 @@ class OMVRpcServiceVirtualHosts extends OMVRpcServiceAbstract
         // General
         $virtualHost['enable']                       = boolval($virtualHost['enable']);
         $virtualHost['host_type']                    = intval($virtualHost['host_type']);
+        $virtualHost['use_public_directory']         = boolval($virtualHost['use_public_directory']);
         $virtualHost['port']                         = intval($virtualHost['port']);
         $virtualHost['server_name_use_default_port'] = boolval($virtualHost['server_name_use_default_port']);
 
@@ -254,6 +255,9 @@ class OMVRpcServiceVirtualHosts extends OMVRpcServiceAbstract
             $mountPoint['dir'],
             $sharedFolder['reldirpath']);
 
+        if ($virtualHost['use_public_directory'])
+            $virtualHost['document_root_full_path'] .= $virtualHost['public_directory'];
+
         // Build possible URLs
         $urls = array();
 
@@ -294,6 +298,8 @@ class OMVRpcServiceVirtualHosts extends OMVRpcServiceAbstract
                 "uuid"                         : {' . $GLOBALS['OMV_JSONSCHEMA_UUID_UNDEFINED'] . '},
                 "enable"                       : { "type" : "boolean" },
                 "document_root"                : {' . $GLOBALS['OMV_JSONSCHEMA_UUID'] . '},
+                "use_public_directory"         : { "type" : "boolean" },
+                "public_directory"             : { "type" : "string", "optional" : true },
                 "host_type"                    : { "type" : "integer" },
                 "port"                         : { "type" : "integer" },
                 "server_name"                  : { "type" : "string" },
@@ -339,6 +345,8 @@ class OMVRpcServiceVirtualHosts extends OMVRpcServiceAbstract
             'uuid'                         => empty($params['uuid']) ? OMVUtil::uuid() : $params['uuid'],
             'enable'                       => boolval($params['enable']),
             'document_root'                => $params['document_root'],
+            'use_public_directory'         => boolval($params['use_public_directory']),
+            'public_directory'             => $params['public_directory'],
             'host_type'                    => intval($params['host_type']),
             'port'                         => intval($params['port']),
             'server_name'                  => $params['server_name'],
